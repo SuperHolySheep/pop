@@ -7,15 +7,23 @@
     <title>Ben u een poep of piemel mens?</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html, div {
+            height: 100%;
+        }
+
+        #pop-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         #pop {
-            left: 0;
-            line-height: 1500px;
-            margin-top: -750px;
-            position: absolute;
-            text-align: center;
-            top: 50%;
             font-size: 33em;
-            width: 100%;
             color: white;
             font-family: "Helvetica Neue", sans-serif;
         }
@@ -44,7 +52,9 @@
 
 <body>
 
-<p id="pop"></p>
+<div id="pop-container">
+    <p id="pop"></p>
+</div>
 
 <script>
     Array.prototype.random = function () {
@@ -53,9 +63,12 @@
 
     let content = ["poep", "piemel"];
     let randomElement = content.random();
-    let popElement = document.getElementById('pop');
 
-    popElement.className = popElement.innerHTML = randomElement;
+    let popElement = document.getElementById('pop');
+    popElement.innerHTML = randomElement;
+
+    let popContainer = document.getElementById('pop-container');
+    popContainer.className = randomElement;
 </script>
 </body>
 </html>

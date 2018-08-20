@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Ben u een poep of piemel mens?</title>
+
+    <style>
+        #pop {
+            left: 0;
+            line-height: 1500px;
+            margin-top: -750px;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            font-size: 33em;
+            width: 100%;
+            color: white;
+            font-family: "Helvetica Neue", sans-serif;
+        }
+
+        .poep {
+            background-color: darkred;
+        }
+
+        .piemel {
+            background-color: dodgerblue;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            #pop {
+                font-size: 12em;
+            }
+        }
+
+        @media only screen and (max-width: 720px) {
+            #pop {
+                font-size: 8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<p id="pop"></p>
+
+<script>
+    Array.prototype.random = function () {
+        return this[Math.floor((Math.random() * this.length))];
+    };
+
+    let content = ["poep", "piemel"];
+    let randomElement = content.random();
+    let popElement = document.getElementById('pop');
+
+    popElement.className = popElement.innerHTML = randomElement;
+</script>
+</body>
+</html>
